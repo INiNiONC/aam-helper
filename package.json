@@ -12,6 +12,25 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "aam",
+        "aliases": ["AAM", "aam"],
+        "extensions": [".aam"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.svg",
+          "dark": "./icon.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "aam",
+        "scopeName": "source.aam",
+        "path": "./syntaxes/aam.tmLanguage.json"
+      }
+    ],
     "commands": [
       {
         "command": "aam-helper.helloWorld",

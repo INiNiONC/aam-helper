@@ -1,0 +1,31 @@
+{
+    "scopeName": "source.aam",
+    "patterns": [
+        {
+            "match": "#.*$",
+            "name": "comment.line.number-sign.aam"
+        },
+        {
+            "comment": "Key-Value pair with quoted value",
+            "match": "^\\s*([a-zA-Z0-9_\\s]+)\\s*(=)\\s*(\"[^\"]*\")",
+            "captures": {
+                "1": { "name": "variable.other.key.aam" },
+                "2": { "name": "keyword.operator.assignment.aam" },
+                "3": { "name": "string.quoted.double.value.aam" }
+            }
+        },
+        {
+            "comment": "Key-Value pair with unquoted value (allows spaces and #)",
+            "match": "^\\s*([a-zA-Z0-9_\\s]+)\\s*(=)\\s*([a-zA-Z0-9_\\s\"'#]+)",
+            "captures": {
+                "1": { "name": "variable.other.key.aam" },
+                "2": { "name": "keyword.operator.assignment.aam" },
+                "3": { "name": "string.unquoted.value.aam" }
+            }
+        },
+        {
+            "match": "=",
+            "name": "keyword.operator.assignment.aam"
+        }
+    ]
+}
