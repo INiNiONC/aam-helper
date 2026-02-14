@@ -1,71 +1,39 @@
-# aam-helper README
+# aam-helper
 
-This is the README for your extension "aam-helper". After writing up a brief description, we recommend including the following sections.
+Support for the AAML format in Visual Studio Code. This extension provides syntax highlighting, real-time validation, and quick fixes for `.aam` configuration files.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Syntax Highlighting
+Automatically highlights syntax for `.aam` files.
+- **Keys**: Alphanumeric keys are color-coded.
+- **Values**: Supports both quoted and unquoted values.
+- **Comments**: Highlights lines starting with `#` as comments.
 
-For example if there is an image subfolder under your extension project workspace:
+### Diagnostics (Linting)
+The extension validates your document in real-time and reports errors for:
+- **Missing Assignment**: Lines missing the `=` operator.
+- **Missing Key/Value**: Lines where the key or value is empty.
+- **Invalid Characters**:
+  - Keys can only contain alphanumerics, underscores, and spaces.
+  - Values can only contain alphanumerics, underscores, spaces, quotes, and hashes.
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Quick Fixes
+Code Actions are provided to automatically fix detected issues:
+- **Add '='**: Inserts a missing assignment operator after the first word.
+- **Clean Key**: Removes invalid characters from keys.
+- **Clean Value**: Removes invalid characters from values.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This extension currently does not contribute any specific settings.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release with basic support:
+- AAML language support (`.aam`).
+- Syntax highlighting via TextMate grammar.
+- Diagnostic collection for format validation.
+- Quick Fix providers for common syntax errors.
